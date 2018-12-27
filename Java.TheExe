@@ -1,0 +1,21 @@
+TODO: Does Java.exe location scheme effect which browser plugin is active?
+
+One of the most complicating considerations for supporting Java, especially multiple versions on the same system, is that Oracle and Sun
+have used multiple convoluted schemes for installing and locating java.exe to launch the Java Virtual Machine, which ultimately runs the
+Java application. Complicating that further is 64bit vs 32bit compatibility. Some versions of Java place a helper-version of java.exe in
+System32, but System32 is virtualized for 32 bit applications on 64 bit systems to SysWow64\System32 and Java fails to place a copy of
+java.exe in SysWow64\System32. In this case, 32 bit applications depending on certain versions of 64 bit Java will not locate java.exe at
+all.
+
+---Java Versions up to 1.2---
+In these versions, there is no java.exe. Originally, the JVM was launched by an executable jre.exe.
+
+---Java Version 1.3 to 1.7---
+Java.exe was introduced with a vengeance... and the registry is involved
+
+These versions install multiple java.exe files and registry keys to select the defaut version. 
+
+To begin with, java.exe is in the usual place you would expect... 
+`C:\Program Files\Java\jre<ver>\bin\java.exe`
+`C:\Program Files (x86)\Java\jre<ver>\bin\java.exe`
+
