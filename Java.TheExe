@@ -11,7 +11,8 @@ all.
 In these versions, there is no java.exe. Originally, the JVM was launched by an executable jre.exe.
 
 ---Java Version 1.3 to 1.7---
-Java.exe was introduced with a vengeance... and the registry is involved
+Java.exe was introduced much the way spaghetti is introduced to the floor/wall when you drop the entire bowl... 
+a tangled mess exists between multiple versions of java.exe, the registry, and your environment variables.
 
 These versions install multiple java.exe files and registry keys to select the defaut version. 
 
@@ -19,3 +20,6 @@ To begin with, java.exe is in the usual place you would expect...
 `C:\Program Files\Java\jre<ver>\bin\java.exe`
 `C:\Program Files (x86)\Java\jre<ver>\bin\java.exe`
 
+These are the exe's that start the JVM/JRE. They drop the last two levels in their path, "\bin\java.exe" in default cases,
+and search for "\bin\java.dll". This is how the runtime version is determined or the launcher decides to fail out. This is also
+what enables you to distribute Java with your application. For example, Foo Software Inc., can ship their Bar Productivity App with 
