@@ -21,5 +21,8 @@ To begin with, java.exe is in the usual place you would expect...
 `C:\Program Files (x86)\Java\jre<ver>\bin\java.exe`
 
 These are the exe's that start the JVM/JRE. They drop the last two levels in their path, "\bin\java.exe" in default cases,
-and search for "\bin\java.dll". This is how the runtime version is determined or the launcher decides to fail out. This is also
+and search for "\bin\java.dll". This is how the runtime version is determined or the launcher decides to fail out. But, this may
+not be where the process begins that ultimately leads to launching. A lot is determined by what you launch and how.
+
+This is also
 what enables you to distribute Java with your application. For example, Foo Software Inc., can ship their Bar Productivity App with 
